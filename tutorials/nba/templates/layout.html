@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+	<!--to grab data from __init__.py -->
+	<title>womt - {{ title }}</title> 
+
+	<!-- Bootstrap CSS 
+		How HTML works in Flask:
+		url_for looks for next string, in this case, static.
+		Then it looks for the filename.-->
+	<link href = "{{ url_for('static', filename = 'stylesheets/bootstrap.min.css') }}" rel = "stylesheet" type = "text/css"/>
+	<!-- Custom CSS -->
+	<link href = "{{ url_for('static', filename='stylesheets/style.css') }}" rel = "stylesheet" type="text/css"/>
+
+	<!-- create metadata tags to use in website -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- more of the important metadata tags -->
+    <meta name="description" content="Don't waste your time waiting for NBA basketball statistics, scores, player, and team information to load. bballfast makes finding nba stats and games easy and most importantly fast and relevant.">
+
+    <!-- what people can search up on Google for page rank-->
+    <meta name="keywords" content="NBA,basketball,statistics,stats,bballfast,bball,fast">
+
+    <!-- -->
+    <meta name="author" content="microwavesam">
+
+    <!-- favicon goes in href-->
+    <link rel="shortcut icon" href="">
+
+    <!-- using BS we can use navbar -->
+    <!-- navbarstatictop means it won't follow you down
+    	 navbarinverse is for color -->
+    <nav class="navbar navbar-static-top navbar-inverse bg-inverse">
+    	<a class="navbar-brand" href = "/">womt</a>
+	</nav>
+
+	<!-- remember that this is all procedural, so you'll see all that stuff at the top first, then index.html -->
+	{% block body %} <!-- all context from index.html will be here-->
+	{% endblock %}
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<script src="{{ url_for('static', filename='javascripts/jquery-3.1.1.slim.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='javascripts/tether.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='javascripts/bootstrap.min.js') }}"></script>
+
+</head> 
